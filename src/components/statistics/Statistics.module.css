@@ -1,0 +1,15 @@
+
+.statisticsList {
+  width: 200px;
+}
+
+.statisticsListItem {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.statisticsListItem:not(:last-child) {
+  padding-right: 15px;
+  margin-bottom: 5px;
+}

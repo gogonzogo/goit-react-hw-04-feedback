@@ -1,0 +1,11 @@
+.formTitle {
+  margin-bottom: 15px;
+}
+
+.formButton {
+  width: 100px;
+}
+
+.formButton:not(:last-child) {
+  margin-right: 15px;
+}
