@@ -19,22 +19,25 @@ export const App = () => {
   };
 
   const totalFeedback = () => {
-    if (state.Good === 0 && state.Neutral === 0 && state.Bad === 0) {
+    const { Good, Neutral, Bad } = state;
+    if (Good === 0 && Neutral === 0 && Bad === 0) {
       return 0;
     } else {
-      return state.Good + state.Neutral + state.Bad;
+      return Good + Neutral + Bad;
     }
   };
 
   const postiveFeedbackPercent = () => {
+    const { Good } = state;
     if (totalFeedback() === 0) {
       return 0;
     } else {
-      return Math.round((state.Good / totalFeedback()) * 100);
+      return Math.round((Good / totalFeedback()) * 100);
     }
   };
 
   const options = Object.keys(state);
+  const { Good, Neutral, Bad } = state;
 
   return (
     <>
@@ -47,9 +50,9 @@ export const App = () => {
       <Section title="Statistics">
         {totalFeedback() > 0 ? (
           <Statistics
-            Good={state.Good}
-            Neutral={state.Neutral}
-            Bad={state.Bad}
+            Good={Good}
+            Neutral={Neutral}
+            Bad={Bad}
             positivePercentage={postiveFeedbackPercent()}
             total={totalFeedback()}
           />
